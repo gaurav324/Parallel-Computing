@@ -1,0 +1,28 @@
+Steps to execute:
+
+1. Copy the h3 folder into apps/ directory of the Galois and add another entry for h3 in the make file.
+2. Once you build the h3/h3 (binary), you can execute a command using:
+
+
+[nanda@TACC]~/pingali/Galois-2.1.8/build/default/apps/h3$ ./h3 --help
+USAGE:  <input file>
+
+OPTIONS:
+  Choose a schedule:
+    -FIFO                   - FIFO
+    -ChunkedFIFO            - chunked
+    -dChunkedFIFO           - dChunkedFIFO
+    -OrderedByIntegerMetric - ordered
+    -LocalQueues            - localQ
+  -help                     - Display available options (-help-hidden for more)
+  -noverify                 - Skip verification step
+  Choose an algorithm:
+    -serial                 - Serial
+    -parallel               - Parallel
+  -t=<int>                  - Number of threads
+
+
+3) Examples:
+
+./h3 /work/02681/gsg466/assignment3/input/USA-road-d.USA-sym.gr -t=1 -OrderedByIntegerMetric
+./h3 /work/02681/gsg466/assignment3/input/USA-road-d.USA-sym.gr -t=2 -FIFO
